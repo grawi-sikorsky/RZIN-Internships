@@ -1,0 +1,59 @@
+databaseChangeLog:
+  -  preConditions:
+  -  runningAs:
+  -  changeSet:
+       id:  1
+       author:  jsikora
+       changes:
+         -  createTable:
+              tableName:  user_entity
+              columns:
+                -  column:
+                     name:  id
+                     type:  int
+                     autoIncrement:  true
+                     constraints:
+                       primaryKey:  true
+                       nullable:  false
+                -  column:
+                     name:  username
+                     type:  varchar(255)
+                     constraints:
+                       - nullable: false
+                -  column:
+                     name:  password
+                     type:  varchar(255)
+                     constraints:
+                       nullable:  false
+                -  column:
+                     name:  email
+                     type:  varchar(255)
+                     constraints:
+                       - nullable: false
+                -  column:
+                     name:  firstname
+                     type:  varchar(255)
+                     constraints:
+                       nullable:  false
+                -  column:
+                     name:  lastname
+                     type:  varchar(255)
+                     constraints:
+                       - nullable: false
+                -  column:
+                     name:  age
+                     type:  varchar(255)
+                     constraints:
+                       nullable:  false
+
+
+  - changeSet:
+      id: 2
+      author: jsikora
+      changes:
+        - addColumn:
+            tableName: user_entity
+            columns:
+              - column:
+                  name: phone
+                  type: varchar(255)
